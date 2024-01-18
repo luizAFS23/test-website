@@ -23,7 +23,7 @@
         @endif
 
         @foreach($nomes as $nome)
-           <p>{{ $loop -> $index }}</p>
+           <p>{{ $loop -> index }}</p>
            <p>{{ $nome }}</p>
         @endforeach
 
