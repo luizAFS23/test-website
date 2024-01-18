@@ -24,6 +24,10 @@ Route::get('/', function () {
     return view('welcome', ['nome' => $nome, 'idade' => $idade, 'nomes' => $nomes]);
 });
 
+Route::get('/produtos', function(){
+    return view('products');
+});
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');

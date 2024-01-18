@@ -5,13 +5,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>Laravel</title>
-
-
+        <link rel="stylesheet" href="/css/styles.css">
+        <script src="/js/index.js"></script>
     </head>
     <body>
+        <h1>Hello World</h1>
         <!-- Diretivas do Blade -->
         @if(10 > 5)
-            <p>Hello World</p>
+            <p>ola mundo</p>
         @endif
 
         <p>{{$nome}}</p>
