@@ -25,7 +25,7 @@ Route::get('/', function () {
 });
 
 Route::get('/produtos', function(){
-    return view('products');
+    return view('products'); /*return view() depende de ter arquivos .blade.php na pasta views*/
 });
 
 Route::get('/dashboard', function () {
