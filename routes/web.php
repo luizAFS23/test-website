@@ -24,8 +24,11 @@ Route::get('/', function () {
     return view('welcome', ['nome' => $nome, 'idade' => $idade, 'nomes' => $nomes]);
 });
 
-Route::get('/produtos', function(){
-    return view('products'); /*return view() depende de ter arquivos .blade.php na pasta views*/
+Route::get('/produtos/{id?}', function($id = null){ /*interrogação depois do id pra especificar um parametro default caso não tenha nenhum outro */
+
+    $busca = request('search');
+
+    return view('products', ['id' => $id, 'busca' => $busca]); /*return view() depende de ter arquivos .blade.php na pasta views*/
 });
 
 Route::get('/main', function(){
