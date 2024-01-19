@@ -28,6 +28,10 @@ Route::get('/produtos', function(){
     return view('products'); /*return view() depende de ter arquivos .blade.php na pasta views*/
 });
 
+Route::get('/main', function(){
+    return view('/layouts/main');
+});
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
