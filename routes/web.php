@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
 
-    $nome = 'Matheus';
+    $nome = 'Luiz';
     $idade = 21;
 
     $nomes = ['Matheus', 'Maria', 'João', 'Pedro'];
