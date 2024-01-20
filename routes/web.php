@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\EventController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,12 +17,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
 
-    $nome = 'Luiz';
-    $idade = 21;
-
-    $nomes = ['Matheus', 'Maria', 'João', 'Pedro'];
-
-    return view('welcome', ['nome' => $nome, 'idade' => $idade, 'nomes' => $nomes]);
 });
 
 Route::get('/produtos/{id?}', function($id = null){ /*interrogação depois do id pra especificar um parametro default caso não tenha nenhum outro */
