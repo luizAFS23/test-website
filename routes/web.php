@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EventController;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,12 +19,7 @@ use App\Http\Controllers\EventController;
 Route::get('/', [EventController::class, 'index']); /* index = mesmo "index" da função index do controller EventController*/
 Route::get('/events/create', [EventController::class, 'create']);
 
-Route::get('/produtos/{id?}', function($id = null){ /*interrogação depois do id pra especificar um parametro default caso não tenha nenhum outro */
-
-    $busca = request('search');
-
-    return view('products', ['id' => $id, 'busca' => $busca]); /*return view() depende de ter arquivos .blade.php na pasta views*/
-});
+Route::get('/produtos/{id?}', [ProductController::class, 'produtos']); /* Adicionar uma interrogação no final do 'id' pra dizer que pode ter um valor default caso nao tenha nenhum outro*/
 
 Route::get('/main', function(){
     return view('/layouts/main');
