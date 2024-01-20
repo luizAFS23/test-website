@@ -15,9 +15,8 @@ use App\Http\Controllers\EventController;
 |
 */
 
-Route::get('/', function () {
-
-});
+Route::get('/', [EventController::class, 'index']); /* index = mesmo "index" da função index do controller EventController*/
+Route::get('/events/create', [EventController::class, 'create']);
 
 Route::get('/produtos/{id?}', function($id = null){ /*interrogação depois do id pra especificar um parametro default caso não tenha nenhum outro */
 

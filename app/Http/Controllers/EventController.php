@@ -15,4 +15,9 @@ class EventController extends Controller
 
         return view('welcome', ['nome' => $nome, 'idade' => $idade, 'nomes' => $nomes]);
     }
+
+    public function create(){
+
+        return view('events.create');
+    }
 }
