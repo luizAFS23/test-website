@@ -38,7 +38,7 @@
             </ul>
         </nav>
     </header>
-    @yield('content') <!-- isso ta dizendo que vai "entregar" o conteudo pra outras views - reaproveitamento de codigo -->
+    @yield('content') <!-- isso ta dizendo que vai "entregar" o conteudo desse HTML pra outras views - reaproveitamento de codigo -->
     <footer>HDC Events &copy; 2020</footer>
 </body>
 </html>
