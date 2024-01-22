@@ -38,7 +38,9 @@
             </ul>
         </nav>
     </header>
-    @yield('content') <!-- isso ta dizendo que vai "entregar" o conteudo desse HTML pra outras views - reaproveitamento de codigo -->
+    @yield('content') <!-- todo o conteudo desse HTML vai ser reutilizado em outras views, e esse yield('content') indica o conteúdo das outras views -->
     <footer>HDC Events &copy; 2020</footer>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 </html>
