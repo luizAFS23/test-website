@@ -16,6 +16,8 @@ return new class extends Migration
             $table->timestamps();
             $table->string('title');
             $table->text('description');
+            $table->string('city') //localidade do evento
+            $table->boolean('private');
         });
     }
 
