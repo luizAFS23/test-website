@@ -21,9 +21,17 @@
 
     </form>
 </div>
+
 <div id="events-container" class="col-md-12">
     <h2>Próximos Eventos</h2>
     <p>Veja os eventos dos próximos dias</p>
+    <div id="cards-container" class="row">
+        @foreach($events as $event)
+            <div class="card col-md-3">
+                {{$event -> title}} -- {{$event -> description}}
+            </div>
+        @endforeach
+    </div>
 </div>
 
 @endsection
