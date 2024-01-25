@@ -6,21 +6,20 @@
 
 <h1>Hello World</h1>
 <!-- Diretivas do Blade -->
-@if(10 > 5)
+<!-- @if(10 > 5)
     <p>ola mundo</p>
 @endif
+ -->
 
-<p>{{$nome}}</p>
+<!-- @foreach($events as $event)
+    <p>{{$event -> title}} -- {{$event -> description}}</p>
+@endforeach -->
 
-@if($nome == 'Pedro')
-    <p>O nome é Pedro</p>
-@else
-    <p>O nome não é Pedro</p>
-@endif
+<div id="search-container" class="col-md-12">
+    <h1>Busque um evento</h1>
+    <form action="">
 
-@foreach($nomes as $nome)
-    <p>{{ $loop -> index }}</p>
-    <p>{{ $nome }}</p>
-@endforeach
+    </form>
+</div>
 
 @endsection
