@@ -36,6 +36,6 @@ class EventController extends Controller
 
         $event->save();
 
-        return redirect('/');
+        return redirect('/'); //Redirecionar pra página principal depois de terminar de fazer tudo
     }
 }
