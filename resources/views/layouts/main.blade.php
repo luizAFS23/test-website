@@ -39,7 +39,17 @@
             </div>
         </nav>
     </header>
-    @yield('content') <!-- todo o conteudo desse HTML vai ser reutilizado em outras views, e esse yield('content') indica o conteúdo das outras views -->
+    <main>
+        <div class="container-fluid">
+            <div class="row">
+                <!--Vai checar se a flash message veio, se vier vai printar na tela, e se não vier nao faz nada-->
+                @if(session('msg'))
+                    <p class="msg">{{session('msg')}}</p>
+                @endif
+                @yield('content') <!-- todo o conteudo desse HTML vai ser reutilizado em outras views, e esse yield('content') indica o conteúdo das outras views -->
+            </div>
+        </div>
+    </main>
     <footer>HDC Events &copy; 2020</footer>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>

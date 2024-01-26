@@ -36,6 +36,7 @@ class EventController extends Controller
 
         $event->save();
 
-        return redirect('/'); //Redirecionar pra página principal depois de terminar de fazer tudo
+        //Redirecionar pra página principal depois de terminar de fazer tudo
+        return redirect('/')->with('msg', 'Evento criado com sucesso!'); // <- esse "with" são as flash messages
     }
 }
