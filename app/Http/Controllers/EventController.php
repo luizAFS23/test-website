@@ -38,7 +38,9 @@ class EventController extends Controller
         if($request->hasFile('image') ** $request->file('image') -> isValid()){
             $requestImage = $request->image;
             $extension = $requestImage -> extension();
-            $imageName = md5($requestImage->image->getClientOriginalName() . strtotime("now"));
+            $imageName = md5($requestImage->image->getClientOriginalName() . strtotime("now")) . '.' . $extension; //o nome do arquivo que vai ser colocado no banco de dados, em formato hash (função md5)
+            $requestImage -> image->move(public_path('img/events'), $imageName);
+            $event->image = $imageName; //esse dado que vai salvar a imagem no banco de dados
         }
 
         $event->save();
