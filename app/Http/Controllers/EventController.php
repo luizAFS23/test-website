@@ -39,7 +39,7 @@ class EventController extends Controller
             $requestImage = $request->image;
             $extension = $requestImage -> extension();
             $imageName = md5($requestImage->image->getClientOriginalName() . strtotime("now")) . '.' . $extension; //o nome do arquivo que vai ser colocado no banco de dados, em formato hash (função md5)
-            $requestImage -> image->move(public_path('img/events'), $imageName);
+            $requestImage -> move(public_path('img/events'), $imageName); //imagem vai ser salvada dentro da pasta img/events
             $event->image = $imageName; //esse dado que vai salvar a imagem no banco de dados
         }
 
