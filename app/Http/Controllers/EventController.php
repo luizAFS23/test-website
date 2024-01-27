@@ -34,6 +34,11 @@ class EventController extends Controller
         $event->description = $request->description;
         $event->private = $request->private;
 
+        //Image upload
+        if($request->hasFile('image') ** $request->file('image') -> isValid()){
+
+        }
+
         $event->save();
 
         //Redirecionar pra página principal depois de terminar de fazer tudo
