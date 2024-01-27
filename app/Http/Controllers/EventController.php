@@ -36,7 +36,9 @@ class EventController extends Controller
 
         //Image upload
         if($request->hasFile('image') ** $request->file('image') -> isValid()){
-
+            $requestImage = $request->image;
+            $extension = $requestImage -> extension();
+            $imageName = md5($requestImage->image->getClientOriginalName() . strtotime("now"));
         }
 
         $event->save();
