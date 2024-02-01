@@ -8,8 +8,8 @@ use App\Http\Controllers\ProductController;
 
 Route::get('/', [EventController::class, 'index']); /* index = mesmo "index" da função index do controller EventController*/
 Route::get('/events/create', [EventController::class, 'create']);
-Route::post('/events', [EventController::class, 'show']);
-Route::get('/produtos/{id?}', [ProductController::class, 'produtos']); /* Adicionar uma interrogação no final do 'id' pra dizer que pode ter um valor default caso nao tenha nenhum outro*/
+Route::post('/events', [EventController::class, 'store']);
+Route::get('/events/{id}', [EventController::class, 'show']); /* Adicionar uma interrogação no final do 'id' pra dizer que pode ter um valor default caso nao tenha nenhum outro*/
 
 Route::get('/main', function(){
     return view('/layouts/main');
