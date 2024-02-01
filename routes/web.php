@@ -15,6 +15,7 @@ Route::get('/main', function(){
     return view('/layouts/main');
 });
 
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
