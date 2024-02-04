@@ -169,12 +169,17 @@ header{
 #info-container{
     font-size: 36px;
     font-weight: 900;
+    margin-left: -60px;
 }
 
 #info-container p{
     margin: 0;
     font-size: 14px;
     display: flex;
+}
+
+#description-container{
+    margin-top: -60px;
 }
 
 #info-container h3,
