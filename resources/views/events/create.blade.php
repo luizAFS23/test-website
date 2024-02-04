@@ -34,7 +34,22 @@
         <div class="form-group">
             <label for="title">Adicione Itens de Infraestrutura:</label>
             <div class="form-group">
-                <input type="checkbox" name="items" value="Cadeiras"> Cadeiras
+                <input type="checkbox" name="items[]" value="Cadeiras"> Cadeiras {{-- Colocar colchetes na frente de 'items' - serve pra indentificar que irá ser colocado vários itens --}}
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="form-group">
+                <input type="checkbox" name="items[]" value="Palco"> Palco {{-- Colocar colchetes na frente de 'items' - serve pra indentificar que irá ser colocado vários itens --}}
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="form-group">
+                <input type="checkbox" name="items[]" value="Cerveja Grátis"> Cerveja Grátis {{-- Colocar colchetes na frente de 'items' - serve pra indentificar que irá ser colocado vários itens --}}
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="form-group">
+                <input type="checkbox" name="items[]" value="Open Food"> Open Food {{-- Colocar colchetes na frente de 'items' - serve pra indentificar que irá ser colocado vários itens --}}
             </div>
         </div>
         <input type="submit" class="btn btn-primary" value="Criar Evento">
