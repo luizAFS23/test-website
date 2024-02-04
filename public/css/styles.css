@@ -163,6 +163,7 @@ header{
 
 #image-container img{
     border-radius: 10px;
+    max-height: 80%;
 }
 
 #info-container{
@@ -199,7 +200,9 @@ header{
 
 #items-list li{
     display: flex;
+    font-size: medium;
 }
+
 
 /* Footer */
 

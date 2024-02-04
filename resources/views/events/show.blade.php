@@ -18,7 +18,7 @@
                 <h3>O evento conta com:</h3>
                 <ul id="items-list">
                     @foreach($event->items as $item)
-                        <li><ion-icon name='play-outline'></ion-icon>{{ $item }}</li>
+                        <li><ion-icon name='play-outline'></ion-icon> <span>{{ $item }}</span></li>
                     @endforeach
                 </ul>
             </div>
