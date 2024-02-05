@@ -27,7 +27,7 @@ class EventController extends Controller
         return view('events.create');
     }
 
-    public function store(Request $request){
+    public function store(Request $request){ //$request = contém todos os dados de POST e GET (dos forms feitos no front-end)
         $event = new Event;
         $event->title = $request->title;
         $event->date = $request->date;
