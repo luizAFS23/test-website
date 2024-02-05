@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Event;
+use App\Models\User;
 
 class EventController extends Controller
 {
@@ -53,6 +54,11 @@ class EventController extends Controller
             $event->image = $imageName; //aqui diz que o nome da imagem que foi criada a duas linhas atras vai ser atribuida a imagem do evento
         }
 
+
+        $user = auth()->user(); //função user do event.php
+        $event->user_id = $user->id;
+
+
         $event->save();
 
         //Redirecionar pra página principal depois de terminar de fazer tudo
@@ -62,6 +68,8 @@ class EventController extends Controller
 
     public function show($id){
         $event = Event::findOrFail($id);
+
+        $eventowner = User::where('id', $event->user_id)->first()->toArray();
 
         return view('events.show', ['event' => $event]);
     }

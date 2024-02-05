@@ -7,7 +7,7 @@ use App\Http\Controllers\ProductController;
 
 
 Route::get('/', [EventController::class, 'index']); /* index = mesmo "index" da função index do controller EventController*/
-Route::get('/events/create', [EventController::class, 'create']);
+Route::get('/events/create', [EventController::class, 'create'])->middleware('auth');
 Route::post('/events', [EventController::class, 'store']);
 Route::get('/events/{id}', [EventController::class, 'show']); /* Adicionar uma interrogação no final do 'id' pra dizer que pode ter um valor default caso nao tenha nenhum outro*/
 
