@@ -16,7 +16,7 @@
 
 <div id="search-container" class="col-md-12">
     <h1>Busque um evento</h1>
-    <form action="">
+    <form action="" method="GET"> {{-- Método GET para buscar coisas do banco de dados --}}
         <input type="text" name="search" id="search" class="form-control" placeholder="Procurar">
     </form>
 </div>

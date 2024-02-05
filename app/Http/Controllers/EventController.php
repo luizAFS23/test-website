@@ -9,9 +9,17 @@ class EventController extends Controller
 {
     //função da rota principal da aplicação
     public function index(){
-        $events = Event::all(); //selecionar todos os dados/eventos do banco de dados
+        $search = request('search'); //esse search entre aspas é por causa do input que foi nomeado de search no blade
 
-        return view('welcome', ['events' => $events]);
+        if($search){
+            $events = Event::where([
+                ['title', 'like', '%'.$search.'%']
+            ])->get(); //esse get diz que quer 'pegar' esses registros do search
+        }else{
+            $events = Event::all(); //selecionar todos os dados/eventos do banco de dados
+        }
+
+        return view('welcome', ['events' => $events, 'search' => $search]);
     }
 
     public function sla(){
@@ -42,7 +50,7 @@ class EventController extends Controller
             $extension = $requestImage -> extension();
             $imageName = md5($requestImage->getClientOriginalName() . strtotime("now")) . "." . $extension; //o nome do arquivo que vai ser colocado no banco de dados, em formato hash (função md5)
             $requestImage -> move(public_path('img/events'), $imageName); //imagem vai ser salvada dentro da pasta img/events
-            $event->image = $imageName; //esse dado que vai salvar a imagem no banco de dados
+            $event->image = $imageName; //aqui diz que o nome da imagem que foi criada a duas linhas atras vai ser atribuida a imagem do evento
         }
 
         $event->save();
